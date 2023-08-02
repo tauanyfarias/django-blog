@@ -9,7 +9,8 @@ def index(request):
 
 #define uma function view chamada ola
 def ola(request):
-    return HttpResponse('Olá Django')
+    #return HttpResponse('Olá Django')#
+    return render(request, 'home.html')
 
 # def index(request):
 #     return render(request, 'index.html')
