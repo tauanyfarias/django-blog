@@ -1,3 +1,5 @@
+from django.views.generic.detail import DetailView
+
 from django.shortcuts import render
 
 #inclui a classe httpresponde.
@@ -19,4 +21,15 @@ def ola(request):
 
 # def index(request):
 #     return render(request, 'index.html')
+
+from django.shortcuts import render, get_object_or_404
+from blog.models import Post
+def post_show(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'post/detail.html', {'post': post})
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post/detail.html'
+    context_object_name = 'post'
 
