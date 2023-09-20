@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
   <meta charset="UTF-8">
@@ -26,3 +27,28 @@
 </body>
 
 </html>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Meu Blog</title>
+    </head>
+    <body>
+        <main>
+            <h1>Bem vindo ao Blog</h1>
+        </main>
+        {% for post in posts_list %}
+        <article>
+            <h2>Em: {{ post.pub_date|date:"d / m / Y" }}</h2>
+            <p>{{ post.body_text }}</p>
+        </article>
+        {% endfor %}
+
+        <a href="{% url 'post_add' %}" class="btn btn-lg btn-primary font-weight-bold">
+            + Post
+            </a>
+            
+    </body>
+</html>
+>>>>>>> 8ff06df2d2e1ff9bb07f7a24fb5022d8c66b1797
